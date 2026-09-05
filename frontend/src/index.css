@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-glow-bg text-gray-800 font-sans antialiased selection:bg-glow-secondary selection:text-glow-primary transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-glow-dark-bg text-gray-100 selection:bg-glow-primary selection:text-white;
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 214, 232, 0.5);
+}
+
+.dark .glass-panel {
+  background: rgba(27, 17, 25, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 94, 156, 0.15);
+}
+
+.glass-nav {
+  background: rgba(255, 249, 252, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 214, 232, 0.4);
+}
+
+.dark .glass-nav {
+  background: rgba(15, 9, 14, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(61, 32, 54, 0.6);
+}
+
+/* Gradient Pink Button */
+.btn-glow {
+  background: linear-gradient(135deg, #FF5E9C 0%, #FF85B3 50%, #FF5E9C 100%);
+  background-size: 200% auto;
+  box-shadow: 0 4px 20px -2px rgba(255, 94, 156, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  background-position: right center;
+  box-shadow: 0 6px 25px 0 rgba(255, 94, 156, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-glow-outline {
+  border: 1.5px solid #FF5E9C;
+  color: #FF5E9C;
+  transition: all 0.3s ease;
+}
+
+.btn-glow-outline:hover {
+  background: rgba(255, 94, 156, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9FC;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0F090E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD6E8;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3D2036;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5E9C;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+/* Floating animation */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 94, 156, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(255, 94, 156, 0.7); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
+}

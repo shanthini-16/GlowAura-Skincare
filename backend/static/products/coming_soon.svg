@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F8"/>
+      <stop offset="50%" stop-color="#F5EEF2"/>
+      <stop offset="100%" stop-color="#EFE8ED"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="32" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle circular accent -->
+  <circle cx="200" cy="180" r="110" fill="#FFFFFF" opacity="0.6"/>
+
+  <!-- Minimalist Bottle Silhouette -->
+  <g filter="url(#subtleShadow)">
+    <!-- Dropper Cap -->
+    <rect x="188" y="105" width="24" height="28" rx="6" fill="#D1C7D0"/>
+    <rect x="194" y="90" width="12" height="15" rx="3" fill="#A89EA7"/>
+    <!-- Bottle Shoulder & Body -->
+    <path d="M 160 160 Q 160 135 185 133 L 215 133 Q 240 135 240 160 L 240 240 Q 240 255 225 255 L 175 255 Q 160 255 160 240 Z" fill="#FFFFFF" stroke="#E2D9E0" stroke-width="2"/>
+    <!-- Label rectangle -->
+    <rect x="172" y="175" width="56" height="50" rx="4" fill="#FAF5F8" stroke="#EFE6EC" stroke-width="1.5"/>
+    <line x1="182" y1="192" x2="218" y2="192" stroke="#FF5E9C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="185" y1="202" x2="215" y2="202" stroke="#C5BAC4" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="188" y1="211" x2="212" y2="211" stroke="#C5BAC4" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Neutral Label Text -->
+  <text x="200" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="1.2">IMAGE COMING SOON</text>
+  <text x="200" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#94A3B8" text-anchor="middle">Official Packshot Under Review</text>
+</svg>
