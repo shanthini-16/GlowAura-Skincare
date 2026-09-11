@@ -36,4 +36,4 @@ projects:
                 fromService:
                   type: web
                   name: glowaura-backend
-                  envVarKey: RENDER_EXTERNAL_URL
+                  envVarKey: RENDER_EXTERNAL_HOSTNAME
