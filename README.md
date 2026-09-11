@@ -2,6 +2,9 @@
 
 > A luxury skincare and wellness platform featuring AI Computer Vision skin diagnosis, dermatologist-aligned personalized routines, 4-week nutritional diet plans, and an e-commerce store with genuine packshot imagery.
 
+## 🚀 Live Demo
+
+[**Try GlowAura Live**](https://glowaura-frontend.onrender.com)
 ---
 
 ## 🌟 Overview
