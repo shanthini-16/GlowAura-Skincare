@@ -14,12 +14,15 @@ from diet_generator import generate_personalized_diet
 from seed_data import seed_database
 
 app = Flask(__name__, static_folder='static')
-app.config['SECRET_KEY'] = 'glowaura_luxury_secret_jwt_key_2026'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'glowaura_luxury_secret_jwt_key_2026')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///glowaura.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 db.init_app(app)
+
+with app.app_context():
+    seed_database(app)
 
 # Create static upload folder
 os.makedirs(os.path.join(app.root_path, 'static', 'uploads'), exist_ok=True)
@@ -687,6 +690,5 @@ def health():
     })
 
 if __name__ == '__main__':
-    with app.app_context():
-        seed_database(app)
-    app.run(host='127.0.0.1', port=5000, debug=False)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)

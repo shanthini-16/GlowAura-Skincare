@@ -23,6 +23,11 @@ const SkinGauges = ({ scanData }) => {
 
   if (!scanData || !scanData.analysis) return null;
   const { analysis, image_url } = scanData;
+  const resolvedImageUrl = image_url 
+    ? (image_url.startsWith('http') || image_url.startsWith('data:') 
+        ? image_url 
+        : (import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}${image_url}` : image_url))
+    : '/logo.jpg';
 
   // Circular Score circumference
   const radius = 54;
@@ -146,7 +151,7 @@ const SkinGauges = ({ scanData }) => {
 
           <div className="relative w-60 h-60 rounded-2xl overflow-hidden border-2 border-pink-200 dark:border-pink-900/60 shadow-md">
             <img 
-              src={image_url || '/logo.jpg'} 
+              src={resolvedImageUrl} 
               alt="Scan Diagnostic" 
               className="w-full h-full object-cover"
             />
