@@ -23,10 +23,20 @@ const SkinGauges = ({ scanData }) => {
 
   if (!scanData || !scanData.analysis) return null;
   const { analysis, image_url } = scanData;
+  const formatApiUrl = () => {
+    let base = import.meta.env.VITE_API_URL;
+    if (!base) return '';
+    base = base.trim();
+    if (!base.startsWith('http://') && !base.startsWith('https://')) {
+      base = `https://${base}`;
+    }
+    return base.replace(/\/+$/, '');
+  };
+  const apiBase = formatApiUrl();
   const resolvedImageUrl = image_url 
     ? (image_url.startsWith('http') || image_url.startsWith('data:') 
         ? image_url 
-        : (import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}${image_url}` : image_url))
+        : (apiBase ? `${apiBase}${image_url.startsWith('/') ? '' : '/'}${image_url}` : image_url))
     : '/logo.jpg';
 
   // Circular Score circumference
