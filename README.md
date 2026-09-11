@@ -1,10 +1,9 @@
 # GlowAura – AI-Powered Personalized Skincare & Beauty Platform ✨
 
-> A luxury skincare and wellness platform featuring AI Computer Vision skin diagnosis, dermatologist-aligned personalized routines, 4-week nutritional diet plans, and an e-commerce store with genuine packshot imagery.
-
+> An AI-powered skincare and wellness platform featuring computer vision-based skin analysis, personalized skincare routines, nutrition plans, product recommendations, and e-commerce features.
 ## 🚀 Live Demo
 
-[**Try GlowAura Live**](https://glowaura-frontend.onrender.com)
+[**Try GlowAura-Skincare Live**](https://glowaura-frontend.onrender.com)
 ---
 
 ## 🌟 Overview
